@@ -73,6 +73,40 @@
   }
 
   </style>
+<script>
+    function calculateTotal() {
+      const dishType = document.getElementById("dishType").value;
+      const pax = parseInt(document.getElementById("exactPax").value);
+
+      if (!dishType || isNaN(pax) || pax < 50 || pax > 500) {
+        document.getElementById("totalCost").value = "";
+        document.getElementById("partialPayment").value = "";
+        document.getElementById("balance").value = "";
+        return;
+      }
+
+      let perHead = 0;
+
+      if (pax >= 50 && pax <= 99) {
+        perHead = dishType === "pork" ? 650 : 700;
+      } else if (pax >= 100 && pax <= 149) {
+        perHead = dishType === "pork" ? 600 : 550;
+      } else if (pax >= 150 && pax <= 199) {
+        perHead = 550;
+      } else if (pax >= 200 && pax <= 500) {
+        perHead = 500;
+      }
+
+      const total = perHead * pax;
+      const partial = total * 0.3;
+      const balance = total - partial;
+
+      document.getElementById("totalCost").value = `₱${total.toLocaleString()}`;
+      document.getElementById("partialPayment").value = `₱${partial.toLocaleString()}`;
+      document.getElementById("balance").value = `₱${balance.toLocaleString()}`;
+    }
+  </script>
+  
 </head>
 <body>
 
@@ -220,31 +254,25 @@
       <label>Event Details:</label>
       <textarea name="eventDetails" rows="4" required></textarea>
 
-      <label>Select Menu Option:</label>
-      <select name="menuOption">
-        <option>Option 1</option>
-        <option>Option 2</option>
-        <option>Option 3</option>
-        <option>Option 4</option>
-        <option>Option 5</option>
-        <option>Option 6</option>
-        <option>Option 7</option>
-        <option>Option 8</option>
-        <option>Option 9</option>
-        <option>Option 10</option>
-      </select>
-
-      <label>Select Pax Range:</label>
-<select id="paxRange" name="paxRange" required>
-  <option value="">-- Select Range --</option>
-  <option value="650">50–99 pax (₱650 per head)</option>
-  <option value="600">100–149 pax (₱600 per head)</option>
-  <option value="550">150–199 pax (₱550 per head)</option>
-  <option value="500">200–500 pax (₱500 per head)</option>
+      <label>Select Dish Type:</label>
+<select id="dishType" name="dishType" onchange="calculateTotal()" required>
+  <option value="">-- Select Dish Type --</option>
+  <option value="pork">Pork Dishes</option>
+  <option value="beef">Beef Dishes</option>
 </select>
 
 <label>Exact Number of Pax:</label>
-<input type="number" id="exactPax" name="exactPax" min="50" max="500" required>
+<input type="number" id="exactPax" name="exactPax" min="50" max="500" oninput="calculateTotal()" required>
+
+<label>Total Cost:</label>
+<input type="text" id="totalCost" name="totalCost" readonly>
+
+<label>30% Partial Payment (Required):</label>
+<input type="text" id="partialPayment" name="partialPayment" readonly>
+
+<label>Remaining Balance:</label>
+<input type="text" id="balance" name="balance" readonly>
+
 
 <label>Total Cost:</label>
 <input type="text" id="totalCost" name="totalCost" readonly>
