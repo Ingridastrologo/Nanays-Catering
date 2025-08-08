@@ -255,11 +255,17 @@
       <textarea name="eventDetails" rows="4" required></textarea>
 
       <label>Select Dish Type:</label>
-<select id="dishType" name="dishType" onchange="calculateTotal()" required>
+<select id="dishType" name="dishType" onchange="updateSetOptions(); calculateTotal();" required>
   <option value="">-- Select Dish Type --</option>
   <option value="pork">Pork Dishes</option>
   <option value="beef">Beef Dishes</option>
 </select>
+
+<label>Select Dish Set:</label>
+<select id="dishSet" name="dishSet" required>
+  <option value="">-- Select Set --</option>
+</select>
+
 
 <label>Exact Number of Pax:</label>
 <input type="number" id="exactPax" name="exactPax" min="50" max="500" oninput="calculateTotal()" required>
