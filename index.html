@@ -167,6 +167,33 @@
 #lightbox-close:hover {
   background-color: rgba(255, 255, 255, 0.3);
 }
+  #lightbox-prev, #lightbox-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 3rem;
+  color: white;
+  cursor: pointer;
+  z-index: 10000;
+  padding: 0.5rem;
+  background-color: rgba(0,0,0,0.4);
+  border-radius: 5px;
+  user-select: none;
+}
+
+#lightbox-prev {
+  left: 30px;
+}
+
+#lightbox-next {
+  right: 30px;
+}
+
+#lightbox-prev:hover,
+#lightbox-next:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
 
 </style>
 
@@ -491,7 +518,12 @@ window.onload = function () {
   <footer>
     <p>&copy; 2025 Nanay's Catering Services | <a href="https://www.facebook.com/Nanays_catering_services" style="color:white;">Facebook Page</a></p>
   </footer>
-
+<div id="lightbox-overlay" onclick="closeLightbox()">
+    <span id="lightbox-close" onclick="closeLightbox(event)">×</span>
+    <span id="lightbox-prev" onclick="prevImage(event)">&#10094;</span>
+    <img id="lightbox-image" src="">
+    <span id="lightbox-next" onclick="nextImage(event)">&#10095;</span>
+  </div>
 </body>
 </html>
 
