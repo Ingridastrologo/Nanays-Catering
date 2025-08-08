@@ -262,15 +262,66 @@
     
     <h2>Inquiry / Booking Form</h2>
     <form>
-      <label>Full Name:</label>
-      <input type="text" name="name" required />
-      <label>Email:</label>
-      <input type="email" name="email" required />
-      <label>Contact Number:</label>
-      <input type="text" name="contact" required />
+  <h3>Client Information</h3>
+  <label>Name of Client:</label>
+  <input type="text" name="clientName" required>
 
-      <label>Event Details:</label>
-      <textarea name="eventDetails" rows="4" required></textarea>
+  <label>Contact Details:</label>
+  <input type="text" name="clientContact" required>
+
+  <label>Email:</label>
+  <input type="email" name="email" required>
+
+  <h3>Event Details</h3>
+  <label>Event / Occasion:</label>
+  <input type="text" name="eventOccasion" required>
+
+  <label>No. of Pax:</label>
+  <input type="number" id="exactPax" name="numberOfPax" min="50" max="500" oninput="calculateTotal()" required>
+
+  <label>Date of Event:</label>
+  <input type="date" name="eventDate" required>
+
+  <label>Time of the Event:</label>
+  <input type="time" name="eventTime" required>
+
+  <label>Location of Event:</label>
+  <input type="text" name="eventLocation" required>
+
+  <label>Location Map (Google Maps link or description):</label>
+  <textarea name="locationMap" rows="3"></textarea>
+
+  <label>Color of Table Cloth Needed:</label>
+  <input type="text" name="tableClothColor">
+
+  <h3>Menu Selection</h3>
+  <label>Select Dish Type:</label>
+  <select id="dishType" name="dishType" onchange="updateSetOptions(); calculateTotal();" required>
+    <option value="">-- Select Dish Type --</option>
+    <option value="pork">Pork Dishes</option>
+    <option value="beef">Beef Dishes</option>
+  </select>
+
+  <label>Select Dish Set:</label>
+  <select id="dishSet" name="dishSet" required>
+    <option value="">-- Select Set --</option>
+  </select>
+
+  <label>Total Cost:</label>
+  <input type="text" id="totalCost" name="totalCost" readonly>
+
+  <label>30% Partial Payment (Required):</label>
+  <input type="text" id="partialPayment" name="partialPayment" readonly>
+
+  <label>Remaining Balance:</label>
+  <input type="text" id="balance" name="balance" readonly>
+
+  <label>Upload Proof of Payment:</label>
+  <input type="file" name="paymentProof" />
+
+  <button type="submit">Submit</button>
+</form>
+
 
       <label>Select Dish Type:</label>
 <select id="dishType" name="dishType" onchange="updateSetOptions(); calculateTotal();" required>
