@@ -85,7 +85,7 @@
       ["A", "B", "C"].forEach(set => {
         const option = document.createElement("option");
         option.value = set.toLowerCase();
-        option.textContent = Set ${set};
+        option.textContent = `Set ${set}`;
         dishSet.appendChild(option);
       });
     }
@@ -118,13 +118,12 @@
     const partial = total * 0.3;
     const balance = total - partial;
 
-    document.getElementById("totalCost").value = ₱${total.toLocaleString()};
-    document.getElementById("partialPayment").value = ₱${partial.toLocaleString()};
-    document.getElementById("balance").value = ₱${balance.toLocaleString()};
+    document.getElementById("totalCost").value = `₱${total.toLocaleString()}`;
+    document.getElementById("partialPayment").value = `₱${partial.toLocaleString()}`;
+    document.getElementById("balance").value = `₱${balance.toLocaleString()}`;
   }
 </script>
 
-  
 </head>
 <body>
 
