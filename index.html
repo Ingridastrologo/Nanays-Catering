@@ -56,9 +56,6 @@
       display: block;
       margin: 0 auto 10px;
     }
-    .hidden {
-      display: none;
-    }
   </style>
 </head>
 <body>
@@ -85,20 +82,42 @@
   </section>
 
   <section id="menu">
-    <h2>Menu List & Prices</h2>
+    <h2>Menu Options</h2>
+    <ul>
+      <li>Option 1</li>
+      <li>Option 2</li>
+      <li>Option 3</li>
+      <li>Option 4</li>
+      <li>Option 5</li>
+      <li>Option 6</li>
+      <li>Option 7</li>
+      <li>Option 8</li>
+      <li>Option 9</li>
+      <li>Option 10</li>
+    </ul>
+
+    <h3>Package Pricing (Per Head)</h3>
     <table class="menu-table">
-      <tr><th>Category</th><th>Items</th><th>Price</th></tr>
-      <tr><td>Pork Dishes</td><td>Menudo, Mechado</td><td>Php 2,800/tray</td></tr>
-      <tr><td>Beef Dishes</td><td>Roast Beef, Stroganoff, Mechado, Caldereta, Kare-Kare</td><td>Php 3,000/tray</td></tr>
-      <tr><td>Beef Specials</td><td>Beef Broccoli, Lengua</td><td>Php 3,500/tray</td></tr>
-      <tr><td>Chicken Dishes</td><td>Barbecue, Teriyaki, Wings</td><td>Php 2,500/tray</td></tr>
-      <tr><td>Fish Dishes</td><td>Cream Dory Fillet</td><td>Php 1,700/tray</td></tr>
-      <tr><td>Vegetables</td><td>Chopsuey, Buttered Veggies, Fresh Lumpia</td><td>Php 1,500/tray | Php 65/each (lumpia)</td></tr>
-      <tr><td>Pasta</td><td>Baked Mac, Carbonara, Spaghetti, Lasagna</td><td>Php 1,400–1,500/tray</td></tr>
-      <tr><td>Pancit</td><td>Canton, Sotanghon</td><td>Php 1,500 (10–15 pax)</td></tr>
-      <tr><td>Finger Foods</td><td>Lumpia, Lollipop, Cheese Sticks, Sandwiches</td><td>Php 10–20/pc</td></tr>
-      <tr><td>Desserts</td><td>Mango Crepe, Buko Jello, Fruit Salad, Kutsinta</td><td>Php 1,500</td></tr>
-      <tr><td>Rice</td><td>Plain Rice</td><td>Php 30/cup</td></tr>
+      <tr>
+        <th>Number of Pax</th>
+        <th>Price per Head</th>
+      </tr>
+      <tr>
+        <td>50–99 pax</td>
+        <td>₱650</td>
+      </tr>
+      <tr>
+        <td>100–149 pax</td>
+        <td>₱600</td>
+      </tr>
+      <tr>
+        <td>150–199 pax</td>
+        <td>₱550</td>
+      </tr>
+      <tr>
+        <td>200–500 pax</td>
+        <td>₱500</td>
+      </tr>
     </table>
   </section>
 
@@ -117,43 +136,29 @@
       <label>Contact Number:</label>
       <input type="text" name="contact" required />
 
-      <label>Service Type:</label>
-      <select name="serviceType" id="serviceType" onchange="toggleCateringOptions()">
-        <option value="">-- Select --</option>
-        <option value="foodOrder">Food Order</option>
-        <option value="catering">Catering</option>
-      </select>
-
-      <div id="cateringOptions" class="hidden">
-        <label>Number of Pax:</label>
-        <select name="pax">
-          <option value="">-- Select --</option>
-          <option value="50-100">50–100 pax</option>
-          <option value="150-200">150–200 pax</option>
-          <option value="250-300">250–300 pax</option>
-        </select>
-
-        <label>Choose a Catering Package:</label>
-        <select name="package">
-          <option value="">-- Select Package --</option>
-          <option value="Package A">Package A - 4 viands, 1 pasta, 1 dessert</option>
-          <option value="Package B">Package B - 5 viands, 2 pasta, 2 desserts</option>
-          <option value="Package C">Package C - All-in (6 viands, 3 pasta, 3 desserts + drinks)</option>
-        </select>
-      </div>
-
       <label>Event Details:</label>
       <textarea name="eventDetails" rows="4" required></textarea>
 
-      <label>Select Dishes:</label>
-      <select name="dishes" multiple>
-        <option>Pork - Menudo</option>
-        <option>Beef - Caldereta</option>
-        <option>Chicken - Barbecue</option>
-        <option>Fish - Cream Dory</option>
-        <option>Vegetables - Chopsuey</option>
-        <option>Pasta - Spaghetti</option>
-        <option>Dessert - Mango Crepe</option>
+      <label>Select Menu Option:</label>
+      <select name="menuOption">
+        <option>Option 1</option>
+        <option>Option 2</option>
+        <option>Option 3</option>
+        <option>Option 4</option>
+        <option>Option 5</option>
+        <option>Option 6</option>
+        <option>Option 7</option>
+        <option>Option 8</option>
+        <option>Option 9</option>
+        <option>Option 10</option>
+      </select>
+
+      <label>Select Pax Range:</label>
+      <select name="pax">
+        <option>50–99 pax (₱650/head)</option>
+        <option>100–149 pax (₱600/head)</option>
+        <option>150–199 pax (₱550/head)</option>
+        <option>200–500 pax (₱500/head)</option>
       </select>
 
       <label>Total Cost Estimate:</label>
@@ -179,17 +184,8 @@
   </section>
 
   <footer>
-    <p>&copy; 2025 Nanay's Catering Services | 
-      <a href="https://www.facebook.com/Nanays_catering_services" style="color:white;">Facebook Page</a>
-    </p>
+    <p>&copy; 2025 Nanay's Catering Services | <a href="https://www.facebook.com/Nanays_catering_services" style="color:white;">Facebook Page</a></p>
   </footer>
 
-  <script>
-    function toggleCateringOptions() {
-      const serviceType = document.getElementById("serviceType").value;
-      const cateringOptions = document.getElementById("cateringOptions");
-      cateringOptions.classList.toggle("hidden", serviceType !== "catering");
-    }
-  </script>
 </body>
 </html>
