@@ -234,6 +234,7 @@
   </section>
 
   <section id="booking">
+    
     <h2>Inquiry / Booking Form</h2>
     <form>
       <label>Full Name:</label>
@@ -261,15 +262,25 @@
       </select>
 
       <label>Select Pax Range:</label>
-      <select name="pax">
-        <option>50–99 pax (₱650/head)</option>
-        <option>100–149 pax (₱600/head)</option>
-        <option>150–199 pax (₱550/head)</option>
-        <option>200–500 pax (₱500/head)</option>
-      </select>
+<select id="paxRange" name="paxRange" required>
+  <option value="">-- Select Range --</option>
+  <option value="650">50–99 pax (₱650 per head)</option>
+  <option value="600">100–149 pax (₱600 per head)</option>
+  <option value="550">150–199 pax (₱550 per head)</option>
+  <option value="500">200–500 pax (₱500 per head)</option>
+</select>
 
-      <label>Total Cost Estimate:</label>
-      <input type="text" name="total" />
+<label>Exact Number of Pax:</label>
+<input type="number" id="exactPax" name="exactPax" min="50" max="500" required>
+
+<label>Total Cost:</label>
+<input type="text" id="totalCost" name="totalCost" readonly>
+
+<label>30% Partial Payment (Required):</label>
+<input type="text" id="partialPayment" name="partialPayment" readonly>
+
+<label>Remaining Balance:</label>
+<input type="text" id="balance" name="balance" readonly>
 
       <label>Upload Proof of Payment:</label>
       <input type="file" name="paymentProof" />
