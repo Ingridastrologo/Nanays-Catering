@@ -56,6 +56,22 @@
       display: block;
       margin: 0 auto 10px;
     }
+    .menu-columns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+
+  .menu-column {
+    flex: 1;
+    min-width: 300px;
+  }
+
+  .menu-column h3, .menu-column h4 {
+    margin-top: 1.5rem;
+    color: #d35400;
+  }
+
   </style>
 </head>
 <body>
@@ -83,72 +99,134 @@
 
   <section id="menu">
   <h2>Menu Options</h2>
-    
-  <h3>Set A</h3>
   <ul>
-    <li>Pork Mechado</li>
-    <li>Chicken Teriyaki</li>
-    <li>Fish Fillet with Mayo Garlic Sauce</li>
-    <li>Mixed Vegetables</li>
-    <li>Steamed Rice</li>
-    <li>Crema de Fruta</li>
-    <li>Iced Tea</li>
+    <li>Option 1</li>
+    <li>Option 2</li>
+    <li>Option 3</li>
+    <li>Option 4</li>
+    <li>Option 5</li>
+    <li>Option 6</li>
+    <li>Option 7</li>
+    <li>Option 8</li>
+    <li>Option 9</li>
+    <li>Option 10</li>
   </ul>
 
-  <h3>Set B</h3>
-  <ul>
-    <li>Pork Hamonado</li>
-    <li>Rosemary Chicken</li>
-    <li>Fish Fillet with Mayo Garlic Sauce</li>
-    <li>Buttered Vegetables</li>
-    <li>Steamed Rice</li>
-    <li>Fruit Salad</li>
-    <li>Iced Tea</li>
-  </ul>
+  <div class="menu-columns">
+    <!-- Pork Sets Column -->
+    <div class="menu-column">
+      <h3>Pork Sets</h3>
 
-  <h3>Set C</h3>
-  <ul>
-    <li>Pork Caldereta</li>
-    <li>Chicken Ala King</li>
-    <li>Sweet and Sour Fish</li>
-    <li>Chopsuey in Lohonchai Sauce</li>
-    <li>Steamed Rice</li>
-    <li>Buko Jello</li>
-    <li>Lemon Iced Tea</li>
-  </ul>
+      <h4>Set A</h4>
+      <ul>
+        <li>Pork Mechado</li>
+        <li>Chicken Teriyaki</li>
+        <li>Fish Fillet with Mayo Garlic Sauce</li>
+        <li>Mixed Vegetables</li>
+        <li>Steamed Rice</li>
+        <li>Crema de Fruta</li>
+        <li>Iced Tea</li>
+      </ul>
 
-  <h3>Set D</h3>
-  <ul>
-    <li>Roast Beef with Mushroom Sauce</li>
-    <li>Chicken Teriyaki</li>
-    <li>Fish Fillet with Mayo Garlic Sauce</li>
-    <li>Mixed Vegetables</li>
-    <li>Steamed Rice</li>
-    <li>Crema de Fruta</li>
-    <li>Iced Tea</li>
-  </ul>
+      <h4>Set B</h4>
+      <ul>
+        <li>Pork Hamonado</li>
+        <li>Rosemary Chicken</li>
+        <li>Fish Fillet with Mayo Garlic Sauce</li>
+        <li>Buttered Vegetables</li>
+        <li>Steamed Rice</li>
+        <li>Fruit Salad</li>
+        <li>Iced Tea</li>
+      </ul>
 
-  <h3>Set E</h3>
-  <ul>
-    <li>Beef Mechado</li>
-    <li>Spanish Chicken</li>
-    <li>Sweet and Sour Fish</li>
-    <li>Buttered Vegetables</li>
-    <li>Steamed Rice</li>
-    <li>Fruit Salad</li>
-    <li>Iced Tea</li>
-  </ul>
+      <h4>Set C</h4>
+      <ul>
+        <li>Pork Caldereta</li>
+        <li>Chicken Ala King</li>
+        <li>Sweet and Sour Fish</li>
+        <li>Chopsuey in Lohonchai Sauce</li>
+        <li>Steamed Rice</li>
+        <li>Buko Jello</li>
+        <li>Lemon Iced Tea</li>
+      </ul>
 
-    <h3>Set F</h3>
-  <ul>
-    <li>Beef Caldereta</li>
-    <li>Chicken Barbecue</li>
-    <li>Fish fillet with mayo</li>
-    <li>Chopsuey in Lohonchai Sauce</li>
-    <li>Steamed Rice</li>
-    <li>Buco Jello</li>
-    <li>Iced Tea</li>
-  </ul>
+      <h4>Set E</h4>
+      <ul>
+        <li>Beef Mechado</li>
+        <li>Spanish Chicken</li>
+        <li>Sweet and Sour Fish</li>
+        <li>Buttered Vegetables</li>
+        <li>Steamed Rice</li>
+        <li>Fruit Salad</li>
+        <li>Iced Tea</li>
+      </ul>
+
+      <h4>Package Pricing – Pork Sets</h4>
+      <table class="menu-table">
+        <tr>
+          <th>Number of Pax</th>
+          <th>Price per Head</th>
+        </tr>
+        <tr>
+          <td>50–99 pax</td>
+          <td>₱650</td>
+        </tr>
+        <tr>
+          <td>100–149 pax</td>
+          <td>₱600</td>
+        </tr>
+        <tr>
+          <td>150–199 pax</td>
+          <td>₱550</td>
+        </tr>
+        <tr>
+          <td>200–500 pax</td>
+          <td>₱500</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Beef Sets Column -->
+    <div class="menu-column">
+      <h3>Beef Sets</h3>
+
+      <h4>Set D</h4>
+      <ul>
+        <li>Roast Beef with Mushroom Sauce</li>
+        <li>Chicken Teriyaki</li>
+        <li>Fish Fillet with Mayo Garlic Sauce</li>
+        <li>Mixed Vegetables</li>
+        <li>Steamed Rice</li>
+        <li>Crema de Fruta</li>
+        <li>Iced Tea</li>
+      </ul>
+
+      <h4>Package Pricing – Beef Sets</h4>
+      <table class="menu-table">
+        <tr>
+          <th>Number of Pax</th>
+          <th>Price per Head</th>
+        </tr>
+        <tr>
+          <td>50–99 pax</td>
+          <td>₱750</td>
+        </tr>
+        <tr>
+          <td>100–149 pax</td>
+          <td>₱700</td>
+        </tr>
+        <tr>
+          <td>150–199 pax</td>
+          <td>₱650</td>
+        </tr>
+        <tr>
+          <td>200–500 pax</td>
+          <td>₱600</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</section>
 
   <h3>Package Pricing (Per Head)</h3>
   <table class="menu-table">
