@@ -72,40 +72,58 @@
     color: #d35400;
   }
 
-  </style>
+</style>
 <script>
-    function calculateTotal() {
-      const dishType = document.getElementById("dishType").value;
-      const pax = parseInt(document.getElementById("exactPax").value);
+  function updateSetOptions() {
+    const dishType = document.getElementById("dishType").value;
+    const dishSet = document.getElementById("dishSet");
 
-      if (!dishType || isNaN(pax) || pax < 50 || pax > 500) {
-        document.getElementById("totalCost").value = "";
-        document.getElementById("partialPayment").value = "";
-        document.getElementById("balance").value = "";
-        return;
-      }
+    // Clear current options
+    dishSet.innerHTML = '<option value="">-- Select Set --</option>';
 
-      let perHead = 0;
-
-      if (pax >= 50 && pax <= 99) {
-        perHead = dishType === "pork" ? 650 : 700;
-      } else if (pax >= 100 && pax <= 149) {
-        perHead = dishType === "pork" ? 600 : 550;
-      } else if (pax >= 150 && pax <= 199) {
-        perHead = 550;
-      } else if (pax >= 200 && pax <= 500) {
-        perHead = 500;
-      }
-
-      const total = perHead * pax;
-      const partial = total * 0.3;
-      const balance = total - partial;
-
-      document.getElementById("totalCost").value = `₱${total.toLocaleString()}`;
-      document.getElementById("partialPayment").value = `₱${partial.toLocaleString()}`;
-      document.getElementById("balance").value = `₱${balance.toLocaleString()}`;
+    if (dishType === "pork" || dishType === "beef") {
+      ["A", "B", "C"].forEach(set => {
+        const option = document.createElement("option");
+        option.value = set.toLowerCase();
+        option.textContent = `Set ${set}`;
+        dishSet.appendChild(option);
+      });
     }
-  </script>
+  }
+
+  function calculateTotal() {
+    const dishType = document.getElementById("dishType").value;
+    const pax = parseInt(document.getElementById("exactPax").value);
+
+    if (!dishType || isNaN(pax) || pax < 50 || pax > 500) {
+      document.getElementById("totalCost").value = "";
+      document.getElementById("partialPayment").value = "";
+      document.getElementById("balance").value = "";
+      return;
+    }
+
+    let perHead = 0;
+
+    if (pax >= 50 && pax <= 99) {
+      perHead = dishType === "pork" ? 650 : 700;
+    } else if (pax >= 100 && pax <= 149) {
+      perHead = dishType === "pork" ? 600 : 550;
+    } else if (pax >= 150 && pax <= 199) {
+      perHead = 550;
+    } else if (pax >= 200 && pax <= 500) {
+      perHead = 500;
+    }
+
+    const total = perHead * pax;
+    const partial = total * 0.3;
+    const balance = total - partial;
+
+    document.getElementById("totalCost").value = `₱${total.toLocaleString()}`;
+    document.getElementById("partialPayment").value = `₱${partial.toLocaleString()}`;
+    document.getElementById("balance").value = `₱${balance.toLocaleString()}`;
+  }
+</script>
+
   
 </head>
 <body>
