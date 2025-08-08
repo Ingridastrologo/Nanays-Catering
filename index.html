@@ -294,35 +294,6 @@
   <label>Color of Table Cloth Needed:</label>
   <input type="text" name="tableClothColor">
 
-  <h3>Menu Selection</h3>
-  <label>Select Dish Type:</label>
-  <select id="dishType" name="dishType" onchange="updateSetOptions(); calculateTotal();" required>
-    <option value="">-- Select Dish Type --</option>
-    <option value="pork">Pork Dishes</option>
-    <option value="beef">Beef Dishes</option>
-  </select>
-
-  <label>Select Dish Set:</label>
-  <select id="dishSet" name="dishSet" required>
-    <option value="">-- Select Set --</option>
-  </select>
-
-  <label>Total Cost:</label>
-  <input type="text" id="totalCost" name="totalCost" readonly>
-
-  <label>30% Partial Payment (Required):</label>
-  <input type="text" id="partialPayment" name="partialPayment" readonly>
-
-  <label>Remaining Balance:</label>
-  <input type="text" id="balance" name="balance" readonly>
-
-  <label>Upload Proof of Payment:</label>
-  <input type="file" name="paymentProof" />
-
-  <button type="submit">Submit</button>
-</form>
-
-
       <label>Select Dish Type:</label>
 <select id="dishType" name="dishType" onchange="updateSetOptions(); calculateTotal();" required>
   <option value="">-- Select Dish Type --</option>
