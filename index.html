@@ -56,6 +56,9 @@
       display: block;
       margin: 0 auto 10px;
     }
+    .hidden {
+      display: none;
+    }
   </style>
 </head>
 <body>
@@ -111,8 +114,33 @@
       <input type="text" name="name" required />
       <label>Email:</label>
       <input type="email" name="email" required />
-       <label>Contact Number:</label>
+      <label>Contact Number:</label>
       <input type="text" name="contact" required />
+
+      <label>Service Type:</label>
+      <select name="serviceType" id="serviceType" onchange="toggleCateringOptions()">
+        <option value="">-- Select --</option>
+        <option value="foodOrder">Food Order</option>
+        <option value="catering">Catering</option>
+      </select>
+
+      <div id="cateringOptions" class="hidden">
+        <label>Number of Pax:</label>
+        <select name="pax">
+          <option value="">-- Select --</option>
+          <option value="50-100">50–100 pax</option>
+          <option value="150-200">150–200 pax</option>
+          <option value="250-300">250–300 pax</option>
+        </select>
+
+        <label>Choose a Catering Package:</label>
+        <select name="package">
+          <option value="">-- Select Package --</option>
+          <option value="Package A">Package A - 4 viands, 1 pasta, 1 dessert</option>
+          <option value="Package B">Package B - 5 viands, 2 pasta, 2 desserts</option>
+          <option value="Package C">Package C - All-in (6 viands, 3 pasta, 3 desserts + drinks)</option>
+        </select>
+      </div>
 
       <label>Event Details:</label>
       <textarea name="eventDetails" rows="4" required></textarea>
@@ -151,8 +179,17 @@
   </section>
 
   <footer>
-    <p>&copy; 2025 Nanay's Catering Services | <a href="https://www.facebook.com/Nanays_catering_services" style="color:white;">Facebook Page</a></p>
+    <p>&copy; 2025 Nanay's Catering Services | 
+      <a href="https://www.facebook.com/Nanays_catering_services" style="color:white;">Facebook Page</a>
+    </p>
   </footer>
-</body>
 
+  <script>
+    function toggleCateringOptions() {
+      const serviceType = document.getElementById("serviceType").value;
+      const cateringOptions = document.getElementById("cateringOptions");
+      cateringOptions.classList.toggle("hidden", serviceType !== "catering");
+    }
+  </script>
+</body>
 </html>
